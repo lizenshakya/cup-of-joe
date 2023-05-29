@@ -20,8 +20,8 @@ Core features include:
   - git 
   - mongodb version > 4.4.0 
 
-  # Starting the project without docker
-  - git clone https://github.com/lizenshakya/vendingmachineNew (Clone the project)
+  # Starting the project
+  - git clone git@github.com:lizenshakya/cup-of-joe.git (Clone the project)
   - Mongo DB should be up and running before starting the project
   - npm install (Install the dependencies)
   - inside the config folder create a new .env file using .env.sample
@@ -33,14 +33,8 @@ Core features include:
     - npm run test
     - npm run test:coverage(for test coverage)
 
-  # Starting the project with docker
-  Starting this project using docker requires docker installed.
-    # Dev server
-    - docker-compose build (Build the image - only once, you need not do this every time unless you need to build a new image.)
-    - docker-compose -up -d (Run the application)
-    - Now application is up and running in development mode.
-    - Your changes will be auto reflected. You are good to make changes to your files. 
-    
-    (Note:** docker-compose -up -d --build (Run this command instead of those two and application will run immediately after build is finished.))
+  # Note
+    For now 
+    - There are only two user roles customer and admin.
+    - Customers can only order latte, capechino, americano or normal coffee
 
-Do reference apidocs for curl commands
