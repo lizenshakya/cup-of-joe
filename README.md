@@ -38,3 +38,8 @@ Core features include:
     - There are only two user roles customer and admin.
     - Customers can only order latte, capechino, americano or normal coffee
 
+  # Api Information
+  - Postman collection doc is located in apiDocs.
+  - Open postman and import the doc to check the available apis.
+
+

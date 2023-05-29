@@ -70,7 +70,7 @@ describe("auth controller", () => {
     jwt.sign.mockImplementationOnce(() => ({
       token: "token",
     }));
-    await signIn(request, response);
+    await signIn(request, response, jest.fn(x => x));
     expect(comparePassword).toHaveBeenCalled();
     expect(sendSuccessResponse).toHaveBeenCalledWith(
       expect.objectContaining({

@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "715bbfd9-36fb-452c-aeab-e016dcb6ca82",
+		"name": "Cup of Joe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21290490"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"hari2\",\n    \"address\": \"Gabahal\",\n    \"phoneNumber\": 1213,\n    \"password\": \"test\",\n    \"role\": \"customer\",\n    \"email\": \"hari@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"test\",\n    \"email\": \"hari@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/signIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpemVuc2hha3lhQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY0NzQ0MGI5NTUwYzA0NzQwZGE5MjkzZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY4NTM3Nzk5OCwiZXhwIjoxNjg1NDIxMTk4fQ.gQW-ffiCEoP-ozj1yN8yIYFcJsNxhG7JjBT4Iyk1svs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"647440b9550c04740da9293e\",\n    \"userOrderList\": [\n        {\n            \"productName\": \"coffee\",\n            \"productType\": \"latte\",\n            \"quantity\": 2,\n            \"additionalInfo\": \"Need some milk in the tea\"\n        },\n        {\n            \"productName\": \"coffee\",\n            \"productType\": \"americano\",\n            \"quantity\": 1,\n            \"additionalInfo\": \"Need some sugar syrup in the tea\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/userOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"userOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all userOrder",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhcmlAZ21haWwuY29tIiwidXNlcklkIjoiNjQ3NGRiZDVmMDNmOWRiMTU3MmYyZGI2Iiwicm9sZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjg1MzgwMDY4LCJleHAiOjE2ODU0MjMyNjh9.4rvTS4xb8Xv5s6xSzYlb4RAT6y-fTt-XmZD1zuM33Lg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/userOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"userOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get individual user order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/userOrder/:userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"userOrder",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get individual user order Copy",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"done\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/userOrder/:orderId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"userOrder",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

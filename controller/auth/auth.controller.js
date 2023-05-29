@@ -11,7 +11,7 @@ const user = require("../../model/user");
 const signIn = async (req, res, next) => {
   const { email, password } = req.body;
   try {
-    const oldUser = await user.getOne({ where: { email } });
+    const oldUser = await user.getOne({ query: { email } });
     if (!oldUser) throw new NotFoundError("User doesn't exist");
     const isPasswordCorrect = await comparePassword(password, oldUser.password);
     if (!isPasswordCorrect)
